@@ -1,0 +1,42 @@
+public class Predictions {
+
+    private double beta0;
+    private double beta1;
+
+    // Constructor que recibe beta0 y beta1 calculados
+    public Predictions(double beta0, double beta1) {
+        this.beta0 = beta0;
+        this.beta1 = beta1;
+    }
+
+    public double prediccion1() {
+        System.out.println("=========PREDICCIONES========");
+        double prediccion = beta1 + beta0 * 1 ;
+        System.out.println("Predicción 1 -->: " + prediccion);
+        return prediccion;
+    }
+
+    public double prediccion2() {
+        double prediccion = beta1 + beta0 * 2;
+        System.out.println("Predicción 2 -->: " + prediccion);
+        return prediccion;
+    }
+
+    public double prediccion3() {
+        double prediccion = beta1 + beta0 * 5 ;
+        System.out.println("Predicción 3 -->: " + prediccion);
+        return prediccion;
+    }
+
+    public double prediccion4() {
+        double prediccion = beta1 + beta0 * 10 ;
+        System.out.println("Predicción 4 -->: " + prediccion);
+        return prediccion;
+    }
+
+    public double prediccion5() {
+        double prediccion = beta1 + beta0 * 15;
+        System.out.println("Predicción 5 -->: " + prediccion);
+        return prediccion;
+    }
+}
