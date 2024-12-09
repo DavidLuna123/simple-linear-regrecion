@@ -1,0 +1,76 @@
+import java.util.Arrays;
+
+public class Calculations {
+
+    private double[] Fire;
+    private double[] ICE;
+
+    double sumaX = 0;
+    double sumaY = 0;
+    double sumaXY = 0;
+    double sumaX2 = 0;
+    double[] arreglo = new double[9];
+
+    public Calculations(double[] Fire, double[] ICE) {
+        this.Fire = Fire;
+        this.ICE = ICE;
+    }
+
+    public void showData() {
+        System.out.println("=========DATA SET========");
+        System.out.println("Datos de Columna X = : " + Arrays.toString(Fire));
+        System.out.println("Datos de Columna Y = : " + Arrays.toString(ICE));
+        System.out.print("\n");
+    }
+
+    public void sumX() {
+        System.out.println("=========CALCULOS========");
+        for (int i = 0; i < Fire.length; i++) {
+            sumaX += Fire[i];
+        }
+        System.out.println("Suma columna X: " + sumaX);
+    }
+
+    public void sumY() {
+        for (int i = 0; i < Fire.length; i++) {
+            sumaY += ICE[i];
+        }
+        System.out.println("Suma columna Y: " + sumaY);
+    }
+
+    public void sumXY() {
+        for (int i = 0; i < Fire.length; i++) {
+            double juancho = Fire[i] * ICE[i];
+            arreglo[i] = juancho;
+        }
+        System.out.println("Columna XY: " + Arrays.toString(arreglo));
+
+        for (int i = 0; i < arreglo.length; i++) {
+            sumaXY += arreglo[i];
+        }
+        System.out.println("Suma Columna XY: " + sumaXY);
+    }
+
+    public void x2() {
+        for (int i = 0; i < Fire.length; i++) {
+            sumaX2 += Fire[i] * Fire[i];
+        }
+        System.out.println("Suma Columna X^2: " + sumaX2);
+        System.out.print("\n");
+    }
+
+    public double getSumaX() {
+        return sumaX;
+    }
+
+    public double getSumaY() {
+        return sumaY;
+    }
+
+    public double getSumaXY() {
+        return sumaXY;
+    }
+
+    public double getSumaX2() {
+        return sumaX2;
+    }
