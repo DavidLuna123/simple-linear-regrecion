@@ -1,0 +1,41 @@
+
+    public class DiscretsMaths {
+
+        public static void main(String[] args) {
+            // Declaration of variables (data set)
+            double[] x = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+            double[] y = {5, 10, 15, 20, 25, 30, 35, 40, 45};
+
+            // ejemplos de data sets usados
+            //10, 20, 30, 40, 50, 60, 70, 80, 90
+            //2, 4, 6, 8, 10, 12, 14, 16, 18
+
+            // Create objects of the classes
+            Calculations calculations = new Calculations(x, y);
+            BetaCalculations betaCalc = new BetaCalculations();
+
+
+            // muestra los datos de la tabla
+            calculations.showData();
+
+            // Llamadas a los métodos de los calculos
+            calculations.sumX();
+            calculations.sumY();
+            calculations.sumXY();
+            calculations.x2();
+
+            // Llamadas a los métodos de las BETAS
+            betaCalc.calculateBeta0(calculations);
+            betaCalc.calculateBeta1(calculations);
+
+            Predictions predictions = new Predictions(betaCalc.getBeta0(), betaCalc.getBeta1());
+
+            // Llamadas a los métodos de predicción
+            predictions.prediccion1();
+            predictions.prediccion2();
+            predictions.prediccion3();
+            predictions.prediccion4();
+            predictions.prediccion5();
+        }
+    }
+
