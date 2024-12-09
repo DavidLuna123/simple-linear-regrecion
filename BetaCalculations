@@ -1,0 +1,26 @@
+public class BetaCalculations {
+    private double beta0;
+    private double beta1;
+
+    public void calculateBeta0(Calculations calc) {
+        System.out.println("=========BETAS========");
+        // con la formula de beta 0 obtenemos sus datos para poder sacar la pendiante osea beta1
+
+        beta0 = (calc.getSumaXY() * calc.getSumaX() - calc.getSumaX() * calc.getSumaY()) /
+                (calc.getSumaX2() * calc.getSumaX() - calc.getSumaX() * calc.getSumaX());
+        System.out.println("Beta 1 = " + beta0);
+    }
+
+    public void calculateBeta1(Calculations calc) {
+        beta1 = (calc.getSumaY() - beta0 * calc.getSumaX()) / calc.getSumaX();
+        System.out.println("Beta 0 = " + beta1);
+    }
+
+    public double getBeta0() {
+        return beta0;
+    }
+
+    public double getBeta1() {
+        return beta1;
+    }
+}
